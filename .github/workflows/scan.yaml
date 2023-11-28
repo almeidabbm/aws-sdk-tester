@@ -23,4 +23,6 @@ jobs:
       - name: Run Slauth
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: slauth scan -p aws .
+        run: slauth scan -p aws -o ./policies.json .
+      - name: Auto-generated Policies
+        run: cat ./policies.json
