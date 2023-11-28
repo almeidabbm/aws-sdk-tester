@@ -23,9 +23,4 @@ jobs:
       - name: Run Slauth
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: slauth scan -p aws -o ./policies.json .
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: policies
-          path: policies.json
+        run: slauth scan -p aws .
